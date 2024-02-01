@@ -35,7 +35,7 @@ class Device : IUSB3, IUSB2
 
 interface IUSB2 : IUSB
 {
-    public byte ReadData() { return Data; }
+    public byte NormalSpeedReadData() { return Data; }
     public string NormalSpeedWriteData(byte writeData) { Data = writeData; return "USB2.0に接続：通常データ書き込み"; }
 }
 
