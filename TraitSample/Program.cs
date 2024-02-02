@@ -23,8 +23,8 @@ class Device : IUSB3, IUSB2
     {
         var message = this switch
         {
-            { Connecter: Connecter.USB2 } => ((IUSB2)this).NormalSpeedWriteData(byte.MaxValue),
-            { Connecter: Connecter.USB3 } => ((IUSB3)this).HiSpeedWriteData(byte.MaxValue),
+            { Connecter: Connecter.USB2 } => ((IUSB2)this).NormalSpeedWriteData(data),
+            { Connecter: Connecter.USB3 } => ((IUSB3)this).HiSpeedWriteData(data),
             { Connecter: Connecter.None } => "USBが接続されていません",
             _ => throw new Exception()
         };
